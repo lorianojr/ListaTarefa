@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+    
+<head>
+    <title>Lista de Tarefas</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	
+	<style>
+		body{
+			background-color: #87CEFA;
+		}
+
+		.container{
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%,-50%);
+			background-color: #fafafa;
+			box-shadow: 0 2px 8px rgba(0,0,0,.16);
+			width: 460px;
+			height: 680px;
+			text-align: center;
+			font-family: 'Nunito',sans-serif;
+		}
+
+		h1{
+			font-size: 40px;
+			margin: 12px 0;
+		}
+
+		h3{
+			font-size: 12px;
+			padding: 0px 14px;
+			margin: 12px 0;
+		}
+
+		input{
+			padding: 6px 4px;
+			width: 70%;
+		}
+
+		button{
+			padding: 7px 14px;
+			background-color: #00b0ff;
+			border: none;
+			border-radius: 4px;
+			color: #fafafa;
+		}
+
+		ul{
+			padding: 15px; 
+		}
+
+		li{
+			list-style: none;
+			padding: 10px 5px;
+			background-color: #fff;
+			margin: 12px 0;
+			box-shadow: 0 2px 8px rgba(0,0,0,.16);
+			border-radius: 3px;
+			transition: .4s;
+		}
+	</style>
+</head>
+
+<body>
+		<div class="container">
+        <h1>Lista de Tarefas</h1>
+		<h3>Para adicionar uma tarefa clique no botão "Adicionar" ou a tecla "Enter" e para remover uma tarefa apenas clique sobre ela.</h3>
+		<input id="entrada" placeholder="Digite sua tarefa">
+		<button id="botao">Adicionar</button>
+		<ul id="lista"></ul>
+		</div>
+
+            <script>
+				// Permitindo o botão enter adicionar tarefa
+				document.addEventListener("keypress", function(e){
+					if(e.key === "Enter") {
+						const botao = document.querySelector("#botao");
+						botao.click();
+					}});
+
+				// Criando uma tarefa 	
+				botao.onclick = function novaTarefa(){
+					var tarefa = document.getElementById("entrada").value;
+					var lista = document.getElementById("lista");
+					var li = document.createElement("li");
+					var txt = entrada.value;
+					 	if(txt ==''){
+		 					alert('Você tem que digitar uma tarefa');
+				 	}
+						else{
+							li.appendChild(document.createTextNode(tarefa));
+							lista.appendChild(li);
+							document.getElementById("entrada").value = "";
+							li.onclick = removerTar;
+					}}
+
+				// Removendo uma tarefa 
+				function removerTar(e){
+					e.target.parentElement.removeChild(e.target);
+				}
+				
+			</script>
+
+</body>
+</html>
+
+
+            
